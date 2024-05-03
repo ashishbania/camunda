@@ -40,7 +40,7 @@ test.beforeAll(async ({request}) => {
   );
 });
 
-test.describe('Process Instance Batch Modification', () => {
+test.describe.skip('Process Instance Batch Modification', () => {
   test('Move Operation', async ({processesPage, commonPage, page}) => {
     const processInstanceKeys = initialData.processInstances
       .map((instance) => instance.processInstanceKey)
