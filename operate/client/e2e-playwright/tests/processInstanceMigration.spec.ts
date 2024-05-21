@@ -106,9 +106,7 @@ test.describe('Process Instance Migration', () => {
       targetVersion.toString(),
     );
 
-    await migrateOperationEntry
-      .getByRole('link', {name: /6 instances/i})
-      .click();
+    await migrateOperationEntry.getByTestId('operation-id').click();
 
     await expect(
       processesPage.processInstancesTable.getByRole('heading'),

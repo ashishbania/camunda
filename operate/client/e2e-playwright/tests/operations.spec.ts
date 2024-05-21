@@ -156,7 +156,7 @@ test.describe('Operations', () => {
     await expect(operationItem.getByText('Cancel')).toBeVisible();
     await expect(operationItem.getByText(DATE_REGEX)).toBeVisible();
 
-    await operationItem.getByText('1 Instance').click();
+    await operationItem.getByTestId('operation-id').click();
     await expect(processesPage.operationIdFilter).toHaveValue(operationId);
     await expect(page.getByText('1 results')).toBeVisible();
 
@@ -233,10 +233,7 @@ test.describe('Operations', () => {
       })
       .toBeGreaterThan(instances.length);
     // select all instances from operation
-    await operationsListItems
-      .nth(0)
-      .getByRole('link', {name: `${instances.length} Instances`})
-      .click();
+    await operationsListItems.nth(0).getByTestId('operation-id').click();
 
     await expect(instancesList.getByRole('row')).toHaveCount(instances.length);
 
