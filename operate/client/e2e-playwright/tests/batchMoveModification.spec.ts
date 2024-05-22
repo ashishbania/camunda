@@ -118,7 +118,7 @@ test.describe('Process Instance Batch Modification', () => {
       modificationOperationEntry.getByRole('progressbar'),
     ).not.toBeVisible();
 
-    await modificationOperationEntry.getByTestId('operation-id').click();
+    await modificationOperationEntry.getByRole('link').click();
 
     await commonPage.collapseOperationsPanel();
 
